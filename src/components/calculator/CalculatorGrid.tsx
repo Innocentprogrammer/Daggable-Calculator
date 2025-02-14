@@ -1,8 +1,8 @@
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import { useCalculatorStore } from '/Projects/All Practice/React Practice/DragCalulator/src/lib/store'
+import { useCalculatorStore } from '../../lib/store'
 import { Display } from './Display'
 import { DraggableButton } from './DraggableButton'
-import { Card, CardContent } from '/Projects/All Practice/React Practice/DragCalulator/src/components/ui/card'
+import { Card, CardContent } from '../../components/ui/card'
 
 export function CalculatorGrid() {
   const { display, buttons, pressButton, updateButtonPosition, removeButton } = useCalculatorStore()

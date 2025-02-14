@@ -1,6 +1,6 @@
-import { cn } from "/Projects/All Practice/React Practice/DragCalulator/src/lib/utils"
-import { ButtonType } from "/Projects/All Practice/React Practice/DragCalulator/src/lib/store"
-import { Button as ShadcnButton } from "/Projects/All Practice/React Practice/DragCalulator/src/components/ui/button"
+import { cn } from "../../lib/utils"
+import { ButtonType } from "../../lib/store"
+import { Button as ShadcnButton } from "../../components/ui/button"
 
 interface CalculatorButtonProps extends ButtonType {
   onClick: () => void

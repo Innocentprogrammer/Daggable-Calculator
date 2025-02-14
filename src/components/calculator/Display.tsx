@@ -1,4 +1,4 @@
-import { Card } from "/Projects/All Practice/React Practice/DragCalulator/src/components/ui/card"
+import { Card } from "../../components/ui/card"
 
 interface DisplayProps {
   value: string

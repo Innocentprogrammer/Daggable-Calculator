@@ -1,5 +1,5 @@
-import { ButtonPalette } from "/Projects/All Practice/React Practice/DragCalulator/src/components/calculator/ButtonPalette"
-import { CalculatorGrid } from "/Projects/All Practice/React Practice/DragCalulator/src/components/calculator/CalculatorGrid"
+import { ButtonPalette } from "../../src/components/calculator/ButtonPalette"
+import { CalculatorGrid } from "../../src/components/calculator/CalculatorGrid"
 
 export default function Calculator() {
   return (

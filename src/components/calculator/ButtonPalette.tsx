@@ -1,8 +1,8 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { useCalculatorStore, ButtonType } from '/Projects/All Practice/React Practice/DragCalulator/src/lib/store'
-import { Card, CardHeader, CardTitle, CardContent } from '/Projects/All Practice/React Practice/DragCalulator/src/components/ui/card'
+import { useCalculatorStore, ButtonType } from '../../lib/store'
+import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card'
 import { Button } from './Button'
 
 const AVAILABLE_BUTTONS: Omit<ButtonType, 'id'>[] = [

@@ -1,6 +1,6 @@
 import { Draggable } from "react-beautiful-dnd"
 import { Button } from "./Button"
-import { ButtonType } from "/Projects/All Practice/React Practice/DragCalulator/src/lib/store"
+import { ButtonType } from "../../lib/store"
 
 interface DraggableButtonProps extends ButtonType {
   index: number

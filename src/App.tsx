@@ -1,7 +1,7 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "/Projects/All Practice/React Practice/DragCalulator/src/lib/queryClient";
+import { queryClient } from "../src/lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import Calculator from "/Projects/All Practice/React Practice/DragCalulator/src/pages/Calculator";
+import Calculator from "../src/pages/Calculator";
 
 function Router() {
   return (
