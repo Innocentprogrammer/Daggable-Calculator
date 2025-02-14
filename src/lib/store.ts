@@ -37,7 +37,7 @@ export const useCalculatorStore = create<CalculatorState>()(
       updateButtonPosition: (id, gridArea) =>
         set((state) => ({
           buttons: state.buttons.map((b) =>
-            b.id === id ? { ...b, gridArea } : b,
+            b.id === id ? { ...b, gridArea } : b
           ),
         })),
       pressButton: (value, type) =>
@@ -48,7 +48,7 @@ export const useCalculatorStore = create<CalculatorState>()(
 
           if (type === "equals") {
             try {
-              const result = evaluate(state.expression);
+              const result = evaluate(state.expression || "0");
               return {
                 display: result.toString(),
                 expression: result.toString(),
@@ -65,34 +65,22 @@ export const useCalculatorStore = create<CalculatorState>()(
 
           // Handle numbers
           if (type === "number") {
-            if (state.expression === "" || state.expression === "0") {
-              newExpression = value;
+            if (state.display === "0" || state.display === "Error") {
+              newExpression = value; // Reset display if starting fresh
             } else {
-              // Check if last character is operator
-              const lastChar = state.expression[state.expression.length - 1];
-              if (["+", "-", "*", "/"].includes(lastChar)) {
-                newExpression = state.expression + value;
-              } else {
-                // Concatenate with previous number
-                newExpression = state.expression + value;
-              }
+              newExpression += value;
             }
           }
 
           // Handle operators
           if (type === "operator") {
-            if (state.expression === "") {
-              if (value === "-") {
-                newExpression = value;
-              }
-            } else {
-              const lastChar = state.expression[state.expression.length - 1];
-              if (["+", "-", "*", "/"].includes(lastChar)) {
-                // Replace previous operator
-                newExpression = state.expression.slice(0, -1) + value;
-              } else {
-                newExpression = state.expression + value;
-              }
+            if (newExpression === "" && value === "-") {
+              newExpression = "-"; // Allow leading negative sign
+            } else if (
+              newExpression &&
+              !["+", "-", "*", "/"].includes(newExpression.slice(-1))
+            ) {
+              newExpression += value; // Add operator if last char isn't an operator
             }
           }
 
@@ -105,6 +93,6 @@ export const useCalculatorStore = create<CalculatorState>()(
     }),
     {
       name: "calculator-storage",
-    },
-  ),
+    }
+  )
 );

@@ -1,3 +1,4 @@
+import React from "react";
 import { cn } from "/Projects/All Practice/React Practice/DragCalulator/src/lib/utils";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
